@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PR Live Connect</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js"></script>
+
+<!-- PeerJS -->
+<script src="https://unpkg.com/peerjs@1.4.7/lib/peerjs.min.js"></script>
+</head>
+<body>
+<header>
+  <div class="logo"><i class="fas fa-crown"></i><h1>PR</h1></div>
+  <nav>
+    <a href="#browse"><i class="fas fa-search"></i> Discover</a>
+    <a href="#stream"><i class="fas fa-video"></i> Live Connect</a>
+    <a href="#chat"><i class="fas fa-comments"></i> Chat</a>
+  </nav>
+  <button id="login-btn"><i class="fas fa-sign-in-alt"></i> Login</button>
+</header>
+
+<main>
+  <!-- Browse Profiles -->
+  <section id="browse">
+    <h2>Discover People</h2>
+    <div class="card-grid" id="profile-grid"></div>
+  </section>
+
+  <!-- Live Stream -->
+  <section id="stream">
+    <h2>Live Video</h2>
+    <video id="local-video" autoplay muted></video>
+    <video id="remote-video" autoplay></video>
+    <div id="stream-controls">
+      <button id="start-stream">Go Live</button>
+      <button id="join-stream">Join Live</button>
+    </div>
+    <div id="viewer-list"><h3>Viewers:</h3><ul id="viewers"></ul></div>
+  </section>
+
+  <!-- Chat -->
+  <section id="chat">
+    <h2>Real-Time Chat</h2>
+    <div id="chat-messages"></div>
+    <input id="chat-input" placeholder="Say something...">
+    <button id="send-chat">Send</button>
+  </section>
+</main>
+
+<footer>
+<p>&copy; 2026
